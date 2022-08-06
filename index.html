@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+    
+
+    :root {
+      /* Text-after-effect */
+      --txt-color1: hsl(238, 29%, 16%);
+      --txt-color2: hsl(14, 88%, 65%);
+      /* Background gradient */
+      --bg-grad1: hsl(273, 75%, 66%);
+      --bg-grad2: hsl(240, 73%, 65%);
+      /* Text-normal */
+      --txt-color3: hsl(237, 12%, 33%);
+      --txt-color3: hsl(240, 6%, 50%);
+      /* Dividers */
+      --divider: hsl(240, 5%, 91%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      font-family: 'Kumbh Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(var(--bg-grad1), var(--bg-grad2));
+    }
+
+    main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 540px;
+      width: 800px;
+      border-radius: 30px;
+      background-color: hsl(0, 0%, 90%);
+      font-weight: 400;
+    }
+
+    .box {
+      margin-right: -85px;
+      margin-bottom: -100px;
+      z-index: 1;
+    }
+h1{
+  font-weight: 700;
+}
+    section:nth-child(1),
+    section:nth-child(2) {
+      width: 50%;
+      height: 100%;
+    }
+
+    section:nth-child(1) {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .faq-svgs img {
+      width: 100%;
+      margin-left: -65px;
+    }
+
+    .faq-ques {
+      height: 80%;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-top: 10%;
+    }
+.ques {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.ques:hover{
+  color: hsl(14, 88%, 65%);
+}
+
+.hide {
+  display: none;
+  line-height: 1.5rem;
+    }
+.arrow{
+  padding: 2px 5px;
+  cursor: pointer;
+}
+hr{
+  color: var(--divider);
+  margin: 4px 0;
+}
+
+@media screen and (max-width: 640px) {
+  main {
+    flex-direction: column;
+    width: 375px;
+    height: 650px;
+    justify-content: space-between;
+  }
+  .faq-ques{
+    width: unset;
+  }
+  .faq-svgs{
+    height: 20%;
+  }
+  .faq-svgs img{
+    margin: 0;
+    margin-top: -164px;
+    margin-left: -35px;
+    width: 140%;
+  }
+  .box{
+    margin: unset;
+    position: absolute;
+  top: 95px; 
+  margin-left: -165px;
+  width: 120px;
+  }
+  body{
+    flex-direction: column;
+    position: relative;
+    padding: 150px 0 50px 0;
+  }
+  section:nth-child(1){
+    overflow: visible;
+    height: 20%;
+  }
+  section:nth-child(2){
+    width: 80%;
+  }
+  h1{
+    text-align: center;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <img class="box" src="images/illustration-box-desktop.svg" alt="desktop-img">
+  <main>
+    <section>
+      <div class="faq-svgs">
+        <img src="images/illustration-woman-online-desktop.svg" alt="women">
+      </div>
+    </section>
+    <section>
+      <div class="faq-ques">
+        <h1>FAQ</h1>
+        <div class="ques-container">
+          <div class="ques">How many team members can I invite? <img class="arrow" src="images/icon-arrow-down.svg" alt="arrow"></div>
+          <div class="ans hide">You can invite up to 2 additional users on the Free plan. There is no limit on
+            team members for the Premium plan.</div>
+        </div>
+        <hr>
+        <div class="ques-container">
+          <div class="ques">What is the maximum file upload size? <img class="arrow" src="images/icon-arrow-down.svg" alt="arrow">
+          </div>
+          <div class="ans hide"> No more than 2GB. All files in your account must fit your allotted storage space.
+          </div>
+        </div>
+        <hr>
+        <div class="ques-container">
+          <div class="ques">How do I reset my password? <img class="arrow" src="images/icon-arrow-down.svg" alt="arrow"></div>
+          <div class="ans hide">Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.</div>
+        </div>
+        <hr>
+        <div class="ques-container">
+          <div class="ques">Can I cancel my subscription? <img class="arrow" src="images/icon-arrow-down.svg" alt="arrow"></div>
+          <div class="ans hide">Yes! Send us a message and we’ll process your request no questions asked.</div>
+        </div>
+        <hr>
+        <div class="ques-container">
+          <div class="ques">Do you provide additional support? <img class="arrow" src="images/icon-arrow-down.svg" alt="arrow"></div>
+          <div class="ans hide">Chat and email support is available 24/7. Phone lines are open during normal business hours.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+  const arrows = document.querySelectorAll(".arrow");
+  const answers = document.querySelectorAll(".ans");
+  const questions = document.querySelectorAll(".ques");
+  console.log(answers);
+  
+arrows[0].addEventListener('click',function(){
+    answers[0].classList.toggle('hide');
+});
+arrows[1].addEventListener('click',function(){
+    answers[1].classList.toggle('hide');
+});
+arrows[2].addEventListener('click',function(){
+    answers[2].classList.toggle('hide');
+});
+arrows[3].addEventListener('click',function(){
+    answers[3].classList.toggle('hide');
+});
+arrows[4].addEventListener('click',function(){
+    answers[4].classList.toggle('hide');
+});
+
+
+  
+</script>
+</body>
+
+</html>
